@@ -1,13 +1,14 @@
 # pylint: disable=missing-class-docstring
 # Uncomment the following imports before adding the Model code
-
+# dsadsadsadasdsadasda
 from django.db import models
-from django.utils.timezone import now
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
 # <HINT> Create a Car Make model `class CarMake(models.Model)`:
+
+
 class CarMake(models.Model):
     name = models.CharField(max_length=100, unique=True)  # 汽车品牌名称
     description = models.TextField()  # 描述信息
@@ -26,7 +27,7 @@ class CarModel(models.Model):
     car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  # Many-to-One relationship
     name = models.CharField(max_length=100)
     # dealer_id = models.IntegerField()  # 经销商ID，参考Cloudant数据库中的经销商
-    dealer_id = models.IntegerField(null=True, blank=True) 
+    dealer_id = models.IntegerField(null=True, blank=True)
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
         ('SUV', 'SUV'),
@@ -43,7 +44,7 @@ class CarModel(models.Model):
 
     def __str__(self):
         # return self.name  # Return the name as the string representation
-        return f"{self.car_make.name} {self.name} ({self.year})" 
+        return f"{self.car_make.name} {self.name} ({self.year})"
 
 # - Many-To-One relationship to Car Make model (One Car Make has many
 # Car Models, using ForeignKey field)

@@ -25,7 +25,8 @@ class Migration(migrations.Migration):
                 ),
                 ("name", models.CharField(max_length=100, unique=True)),
                 ("description", models.TextField()),
-                ("country", models.CharField(blank=True, max_length=50, null=True)),
+                ("country", models.CharField(blank=True,
+                                              max_length=50, null=True)),
             ],
         ),
         migrations.CreateModel(
