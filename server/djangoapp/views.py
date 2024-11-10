@@ -91,6 +91,8 @@ def get_dealerships(request, state="All"):
     else:
         endpoint = "/fetchDealers/"+state
     dealerships = get_request(endpoint)
+    # print("dasdsa")
+    # print("Dealerships data:", dealerships)  # 打印调试信息
     return JsonResponse({"status":200,"dealers":dealerships})
 
 # Create a `get_dealer_reviews` view to render the reviews of a dealer
@@ -98,10 +100,13 @@ def get_dealer_reviews(request, dealer_id):
     # if dealer id has been provided
     if(dealer_id):
         endpoint = "/fetchReviews/dealer/"+str(dealer_id)
+        print(endpoint)
         reviews = get_request(endpoint)
         for review_detail in reviews:
+            # print(review_detail)
             response = analyze_review_sentiments(review_detail['review'])
-            print(response)
+            # print(response)
+            # print("asjsjdj")
             review_detail['sentiment'] = response['sentiment']
         return JsonResponse({"status":200,"reviews":reviews})
     else:
