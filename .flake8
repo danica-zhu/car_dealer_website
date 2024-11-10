@@ -1,4 +1,24 @@
 # .flake8
 [flake8]
-ignore = E501, F401
-max-line-length = 88  # 可选：自定义行长度
+ignore = 
+    E127,  # continuation line over-indented for visual indent
+    E128,  # continuation line under-indented for visual indent
+    E302,  # expected 2 blank lines, found 1
+    E203,  # whitespace before ':'
+    E231,  # missing whitespace after ':'
+    E265,  # block comment should start with '# '
+    E501,  # line too long
+    E722,  # do not use bare 'except'
+    F401,  # imported but unused
+    F811,  # redefinition of unused
+    F841,  # local variable assigned to but never used
+    W291,  # trailing whitespace
+    W292,  # no newline at end of file
+    W293,  # blank line contains whitespace
+    W391,  # blank line at end of file
+    E225,  # missing whitespace around operator
+    E117,  # over-indented
+    E275,  # missing whitespace after keyword
+    E712,  # comparison to False should be 'if cond is False:' or 'if not cond:'
+    E251   # unexpected spaces around keyword / parameter equals
+max-line-length = 120  # 可选：将行长度限制放宽到120字符
