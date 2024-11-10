@@ -1,0 +1,4 @@
+# .flake8
+[flake8]
+ignore = E501, F401
+max-line-length = 88  # 可选：自定义行长度
